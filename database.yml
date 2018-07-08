@@ -1,0 +1,20 @@
+---
+ - hosts: database
+   become: true
+
+   tasks:
+    - name: Install MySQL
+      action: apt pkg=$item state=installed
+      with_items:
+        - mysql-server-core-5.5
+        - mysql-client-core-5.5
+        - libmysqlclient-dev
+        - python-mysqldb
+        - mysql-server
+        - mysql-client
+
+
+
+  # tasks:
+   # - name: install mysql
+   #   apt: name=mysqlserver state=present update_cash=yes
