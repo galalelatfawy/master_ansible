@@ -12,7 +12,9 @@
         - python-mysqldb
         - mysql-server
         - mysql-client
-
+   - name: start mysql service
+     service: name=mysql state=started enabled=yes
+    
 
 
   # tasks:
